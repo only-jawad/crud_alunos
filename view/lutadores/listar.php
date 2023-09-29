@@ -27,7 +27,6 @@ require(__DIR__ . "/../include/header.php");
             <th>Nome</th>
             <th>peso</th>
             <th>altura</th>
-            <th>experiencia</th>
             <th>categorias</th>
             <th></th>
             <th></th>

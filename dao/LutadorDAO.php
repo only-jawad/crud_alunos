@@ -46,11 +46,15 @@ class LutadorDAO {
     }
 
     public function list() {
-        $sql = "SELECT a.*," . 
-                 " c.organizacao AS organizacao_categoria, c.experiencia AS experiencia_categoria" . 
-                 " FROM lutadores a" .
-                 " JOIN categorias c ON (c.id = a.id_categoria)" . 
-                 " ORDER BY c.organizacao";
+        $sql = "SELECT l.*,".
+        " c.nome AS nome_categoria,".
+        " c.peso AS peso_categoria,".
+        " o.nome AS nome_organizacao,".
+        " o.sigla AS sigla_organizacao".
+        " FROM lutadores l".
+        " JOIN categorias c ON (c.id = l.id_categoria)".
+        " JOIN organizacoes o ON (o.id = l.id_organizacao)".
+       " ORDER BY l.nome";
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();

@@ -15,7 +15,6 @@ if(isset($_POST['submetido'])) {
     $nome = trim($_POST['nome']) ? trim($_POST['nome']) : null;
     $peso = $_POST['peso'] ? $_POST['peso'] : null;
     $altura = $_POST['altura'] ? $_POST['altura'] : null;
-    $experiencia = trim($_POST['experiencia']) ? trim($_POST['experiencia']) : null;
     $idcategoria = is_numeric($_POST['categoria']) ? $_POST['categoria'] : null;
     
     //Criar um objeto Aluno para persistência
